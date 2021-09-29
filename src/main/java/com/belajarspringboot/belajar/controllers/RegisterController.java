@@ -7,7 +7,6 @@ package com.belajarspringboot.belajar.controllers;
 
 import com.belajarspringboot.belajar.interfaces.UserInterface;
 import com.belajarspringboot.belajar.models.User;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,13 +34,9 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String store(@ModelAttribute("user") User user,
-            HttpServletRequest request) throws Exception {
-
+    public String store(@ModelAttribute("user") User user) throws Exception {
         userInterface.register(user);
-
         return "redirect:/login";
     }
 
 }
-

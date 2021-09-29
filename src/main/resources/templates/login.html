@@ -10,7 +10,12 @@
                 <div class="row mb-4">
                     <div class="col-12">
                         <h5 class="mb-4">Halaman Login</h5>
-
+                        <div class="alert alert-danger" th:if="${error}">
+                            <span th:text="${error}"></span>
+                        </div>
+                        <div class="alert alert-success" th:if="${success}">
+                            <span th:text="${success}"></span>
+                        </div>
                         <form method="POST" action="#" th:action="@{/login}" th:object="${user}">
                             <div class="form-group">
                                 <label for="example-todo-title">Email</label>
