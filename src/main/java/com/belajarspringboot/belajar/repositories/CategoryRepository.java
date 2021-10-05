@@ -5,8 +5,7 @@
  */
 package com.belajarspringboot.belajar.repositories;
 
-import com.belajarspringboot.belajar.models.Todo;
-import java.util.List;
+import com.belajarspringboot.belajar.models.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author Hudya
  */
 @Repository
-public interface TodoRepository extends JpaRepository<Todo, Long>{
-    List<Todo> findByUserId(long user_id);
+public interface CategoryRepository extends JpaRepository<Category, Long>{
+    
 }
+

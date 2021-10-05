@@ -49,4 +49,9 @@ public class TodoService implements TodoInterface {
     public void delete(long id) {
         this.todoRepository.deleteById(id);
     }
+
+    @Override
+    public List<Todo> findByUserId(long user_id) {
+        return todoRepository.findByUserId(user_id);
+    }
 }

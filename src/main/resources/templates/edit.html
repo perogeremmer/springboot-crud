@@ -24,6 +24,15 @@
                                 <textarea th:field="*{description}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter to-do description"></textarea>
                                 <small id="emailHelp" class="form-text text-muted">Kamu dapat menuliskan deskripsi to-do secara detail pada kolom ini.</small>
                             </div>
+                            
+                            <div class="form-group">
+                                <select th:field="*{category}" class="form-control">
+                                    <th:block th:each="cat : ${categories}">
+                                        <option th:text="${cat.name}" th:value="${cat.id}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                            
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

@@ -5,17 +5,13 @@
  */
 package com.belajarspringboot.belajar.interfaces;
 
-import com.belajarspringboot.belajar.models.Todo;
+import com.belajarspringboot.belajar.models.Category;
 import java.util.List;
 
 /**
  *
  * @author Hudya
  */
-public interface TodoInterface {
-    List<Todo> getAll();
-    List<Todo> findByUserId(long user_id);
-    void store(Todo todo);
-    Todo getById(long id);
-    void delete(long id);
+public interface CategoryInterface {
+    List<Category> getAll();
 }
