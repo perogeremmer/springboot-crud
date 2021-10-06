@@ -5,6 +5,8 @@
  */
 package com.belajarspringboot.belajar.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -35,6 +38,10 @@ public class Todo {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+    
+    @OneToMany
+    @JoinColumn(name="todo_id")
+    private List<Tags> tags = new ArrayList<>();
     
     @ManyToOne
     @JoinColumn(name="category_id")
@@ -78,5 +85,13 @@ public class Todo {
 
     public User getUser() {
         return user;
+    }
+
+    public void setTags(List<Tags> tags) {
+        this.tags = tags;
+    }
+
+    public List<Tags> getTags() {
+        return tags;
     }
 }

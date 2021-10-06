@@ -37,7 +37,7 @@ public class AuthMiddleware implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
-        System.out.println("Sending request to: " + req.getRequestURI());
+//        System.out.println("Sending request to: " + req.getRequestURI());
         String[] urls = {"/login", "/register"};
         boolean contains = Arrays.stream(urls)
                 .anyMatch(req.getRequestURI()::equals);
@@ -62,6 +62,6 @@ public class AuthMiddleware implements Filter {
             chain.doFilter(request, response);
         }
 
-        System.out.println("Finishing request from: " + req.getRequestURI());
+//        System.out.println("Finishing request from: " + req.getRequestURI());
     }
 }

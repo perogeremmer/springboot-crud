@@ -16,6 +16,7 @@
                                 <th>Description</th>
                                 <th>User</th>
                                 <th>Category</th>
+                                <th>Tags</th>
                                 <th>Action</th>
                             </tr>
                             <tr th:each="todo : ${todos}">
@@ -23,6 +24,11 @@
                                 <td th:text="${ todo.description }"></td>
                                 <td th:text="${ todo.user.name}"></td>
                                 <td th:text="${ todo.category.name}"></td>
+                                <td>
+                                    <th:block th:each="tag : ${todo.tags}">
+                                        <span class="badge badge-info badge-sm" th:text="${tag.tag}"></span>
+                                    </th:block>
+                                </td>
                                 <td>
                                     <div class="btn-group " role="group " aria-label="Basic example ">
                                         <a th:href="@{/todo/{id}/edit(id=${ todo.id })}"  class="btn btn-info text-white ">

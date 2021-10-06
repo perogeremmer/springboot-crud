@@ -8,8 +8,10 @@ package com.belajarspringboot.belajar.controllers;
 import com.belajarspringboot.belajar.interfaces.CategoryInterface;
 import com.belajarspringboot.belajar.interfaces.TodoInterface;
 import com.belajarspringboot.belajar.models.Category;
+import com.belajarspringboot.belajar.models.Tags;
 import com.belajarspringboot.belajar.models.Todo;
 import com.belajarspringboot.belajar.models.User;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -40,8 +42,6 @@ public class MainController {
         
         long user_id = (long) session.getAttribute("id");
         
-        System.out.println(user_id);
-        
         List<Todo> todos = todoInterface.findByUserId(user_id);
         
         model.addAttribute("todos", todos);
@@ -53,6 +53,9 @@ public class MainController {
         
         List<Category> categories = categoryInterface.getAll();
         model.addAttribute("categories", categories);
+        
+        List<Category> categories2 = categoryInterface.getAll();
+        model.addAttribute("categories2", categories2);
         
         Todo todo = new Todo();
         model.addAttribute("todo", todo);
