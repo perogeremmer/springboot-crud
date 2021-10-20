@@ -25,6 +25,11 @@ public class UserService implements UserInterface {
 
     @Override
     public void register(User user) throws Exception {
+        
+        if(user.getEmail().equals("")) {
+            throw new Exception("Email cannot be null!");
+        }
+        
         String hashed = this.hash(user.getPassword());
         user.setPassword(hashed);
         
