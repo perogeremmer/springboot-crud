@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2021 at 08:35 PM
+-- Generation Time: Oct 20, 2021 at 05:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -34,14 +34,6 @@ CREATE TABLE `categories` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `description`, `created_at`) VALUES
-(1, 'Daily', NULL, '2021-10-05 23:21:29'),
-(2, 'Working', NULL, '2021-10-05 23:21:40');
-
 -- --------------------------------------------------------
 
 --
@@ -54,16 +46,6 @@ CREATE TABLE `tags` (
   `tag` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tags`
---
-
-INSERT INTO `tags` (`id`, `todo_id`, `tag`, `created_at`) VALUES
-(1, 3, 'working', '2021-10-07 00:00:00'),
-(2, 3, 'pasar', '2021-10-07 00:00:00'),
-(3, 4, 'tata', '2021-10-07 00:41:45'),
-(4, 5, 'ghaga', '2021-10-07 00:44:35');
 
 -- --------------------------------------------------------
 
@@ -80,15 +62,6 @@ CREATE TABLE `todo` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `todo`
---
-
-INSERT INTO `todo` (`id`, `title`, `description`, `user_id`, `category_id`, `created_at`) VALUES
-(3, 'Coba working', 'Working working', 1, 2, '2021-10-06 00:04:10'),
-(4, 'Budi bekerja', 'budi bekerja', 2, 2, '2021-10-06 00:38:39'),
-(5, 'Pergi ke pasar', 'pergi ke pasar bekerja', 1, 1, '2021-10-06 01:04:11');
-
 -- --------------------------------------------------------
 
 --
@@ -102,16 +75,6 @@ CREATE TABLE `user` (
   `password` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `name`, `email`, `password`, `created_at`) VALUES
-(1, 'Hudya', 'hudya@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2021-09-23 23:48:13'),
-(2, 'Budi', 'budi@mail.com', '81dc9bdb52d04dc20036dbd8313ed055', '2021-09-24 01:10:06'),
-(3, 'Prabowo Subianto', 'prabowo@indonesia.id', 'e10adc3949ba59abbe56e057f20f883e', '2021-09-24 09:07:33'),
-(4, 'Joko Widodo', 'jokowi@indonesia.id', '123456', '2021-09-24 09:23:54');
 
 --
 -- Indexes for dumped tables
@@ -152,25 +115,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `todo`
 --
 ALTER TABLE `todo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
