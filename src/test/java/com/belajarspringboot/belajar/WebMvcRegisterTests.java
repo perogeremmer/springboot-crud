@@ -7,14 +7,10 @@ package com.belajarspringboot.belajar;
 
 
 import com.belajarspringboot.belajar.models.User;
-import com.belajarspringboot.belajar.repositories.UserRepository;
-import com.belajarspringboot.belajar.services.UserService;
 import net.bytebuddy.utility.RandomString;
 import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,13 +34,6 @@ public class WebMvcRegisterTests {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @InjectMocks
-    @Autowired
-    UserService userService;
-
-    @Mock
-    UserRepository userRepository;
 
     @Test
     public void testRegisterWithRightCredentials() throws Exception {

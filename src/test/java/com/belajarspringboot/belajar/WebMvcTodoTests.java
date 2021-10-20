@@ -6,19 +6,13 @@
 package com.belajarspringboot.belajar;
 
 import com.belajarspringboot.belajar.models.Category;
-import com.belajarspringboot.belajar.models.Tags;
 import com.belajarspringboot.belajar.models.Todo;
 import com.belajarspringboot.belajar.models.User;
-import com.belajarspringboot.belajar.repositories.UserRepository;
-import com.belajarspringboot.belajar.services.UserService;
 import java.util.HashMap;
-import java.util.List;
 import net.bytebuddy.utility.RandomString;
 import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,13 +36,6 @@ public class WebMvcTodoTests {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @InjectMocks
-    @Autowired
-    UserService userService;
-
-    @Mock
-    UserRepository userRepository;
 
     @Test
     public void testShowDashboard() throws Exception {
